@@ -1,0 +1,32 @@
+\label{intro}
+Thank its flexibility which directly leads to significant savings on OPEX \&
+CAPEX as well as increased agility on service innovations, the concept of
+NFV~\cite{nfv} has been prevailing recently among teleco service operators. The
+fundamental idea behinds NFV is to build virtualized software network devices
+based on the hypervisor and Commercial-Off-The-Shelf (COTS) hardware. The
+infrastructure which NFV is based on is thus not built specifically for high
+reliability and availability; on the other hand, teleco services normally
+requires five nines of availability which is about an annual outage time of 5
+minutes. Providers are now facing with the dilemma: while enjoying high
+flexibility and saving costs, they have to accept the risks of reliability. In
+the context of NFV, \textit{faults have to be taken as facts rather than
+exceptions}. Currently, this is also one of the major reasons which hold back
+the teleco operators to adopt NFV system in their operational environment.
+
+To tackle this dilemma, a highly efficient fault management system is needed to
+deal with and compensate the un-reliable soft- and hardware systems.  As
+prescribed by many literature on reliability and availability~\cite{depdef}, FM
+including detection of system faults and toleration as well as isolation of
+system anomalies. Finally impacted system should be recovered and services
+restored in a timely manner. One may argue however that each layer involved in
+the holistic NFV system already possesses its own mechanism to deal with fault,
+however the question is: is it enough to have a collection of individual FM
+systems to make a holistically efficient NFV FM system? If not, what can be done
+about it? In this paper, we elaborate to analyze and clarify the problematics.
+The purpose of this paper is to identify gaps and research challenges of
+building of highly efficient NFV FM system. This paper is organized as follows:
+Section \ref{scenario} presents a typical NFV scenario, on which our further
+discussions are based; in Section~\ref{problemstatement} we make a in-depth
+analysis of the issues and problems involved in FM of NVF and try to crystallize
+research challenges; in Section~\ref{research} we discuss research issues and a
+roadmap to solve this complex problem of cross-layer FM.  

@@ -1,0 +1,72 @@
+\documentclass[a4paper,twocolumn,conference]{IEEEtran}
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+   \graphicspath{{fig/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{graphicx}
+
+%\hyphenation{net-works inter-domain}
+
+\begin{document}
+
+% paper title
+
+\title{Cross-Layer Fault Management in Network Function Virtualization}
+
+\author{\IEEEauthorblockN{Feng Liu}
+	\IEEEauthorblockA{%Munich Network Management Team\\
+		Huawei European Research Center\\
+		Riesstr.25, M\"unchen, Germany}
+%\and
+}
+
+\maketitle
+
+\begin{abstract}
+	\input{abstract}
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+	\input{introduction}
+
+\section{Scenario}
+	\input{scenario}
+%
+\section{Problem Statement}
+	\input{problemstatement}
+
+\section{Research Challenges}
+	\input{research}
+
+\section{Conclusion}
+
+
+\section*{Acknowledgment}
+
+\bibliographystyle{IEEEtran}
+\bibliography{clfman}
+
+\end{document}

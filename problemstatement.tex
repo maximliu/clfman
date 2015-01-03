@@ -1,0 +1,48 @@
+\label{problemstatement}
+\begin{table*}[!t]
+\centering
+\caption{A Table on Specific FM Approaches to Different NFV Layers}
+\label{tbl:layers}
+	\begin{tabular}{c|p{3cm}|p{5cm}}
+		\hline
+		\textbf{Layer} & \textbf{Typical HA Approaches} & \textbf{Example}\\
+		\hline
+		\hline
+		Physical	&	Heartbeat, Fencing, Hot/Cold Standby, Reliable Messaging Bus &
+LinuxHA Project, Pacemaker, cman \\
+		Hypervisor & Virtual Resource Monitoring, Live Migration & VMWare HA, HA-Lizard \\
+		Virtual Network Functions & Application-specific FM methods & vendor
+specific application \\
+		Virtual Services & Traditional Network Service OSS/BSS & SNMP or other
+vendor specific methods to manage faults of virtual devices \\
+\hline
+	\end{tabular}
+\end{table*} 
+ 
+The central problem in the cross-layer fault management lays in the coordination
+of various FM appraoches from different layers involved in the NFV architecture
+and, frequently, also within individual layers. We classify those problem in
+\emph{vertical} and \emph{horizontal} dimensions. In this section, we analyze
+research challenges in details accrodingly to the above mentioned dimensions,
+then we provide a scenario that clarify an uncoordinated FM will aggreviate the
+holistic system when failures impact. 
+
+\subsection{Problems of Vertical Integration of FM Approaches} 
+
+Typically each layer of NFV architecture possesses its own specific FM
+approaches to ensure the services offered on this particular layer. There is
+hardly any information exchanged between layers regarding FM and let alone the
+coordination of separated layers. We argue that such a separate approach does
+not meet requirements of high efficient overall FM system.  
+
+\subsubsection{FM between Virtualization and Physical Layers}
+
+\subsubsection{FM between NFVI and NFV Layers}
+
+\subsubsection{FM by Orchestration of NFV Services}
+
+\subsection{Problems of Horizontal Integration of FM Approaches}
+
+\subsubsection{Coordinations between Distributed Clusters}
+
+\subsubsection{Multi-Orchestrator Collaboration}
