@@ -42,11 +42,20 @@ actions, which will only aggravate the holistic fault management process in gene
 
 \subsubsection{Virtualization and Physical Layers}
 
-Virtualization technology enable the physical resources to be shared among
-multiple virtual instances in terms of computing, networking and storage capabilities. 
-While there are different specific forms of resource virtualization, e.g.
-server, network, application etc., there are all 
-
+Virtualization enables physical resources to be shared among multiple virtual
+instances in terms of computing, networking and storage. While there are
+different forms of resource virtualization, e.g. server, network, application
+etc., different approaches have been applied to manage the virtual instances
+which mostly concentrate on the efficient control of physical resources.
+Features such as tracking of dependencies between virtual resources and their
+physical mappings from service point of view is still missing piece.  Such kind
+of dependency tracking is essential for the reliability both from top-down and
+bottom-up perspective. When fault impacts virtualized resources, FM should
+tracking down the associtated physical resources so that new resources could be
+employed to mitgate faults and vice versa. This requires precise mappings
+between layers since there could be one-to-many (aggregation) or many-to-one
+(sharing) relationships between virtualized and physical resources. 
+ 
 \subsubsection{NFVI and NFV Layers}
 
 \subsubsection{FM by Orchestration of NFV Services}
