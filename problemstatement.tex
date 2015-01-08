@@ -54,9 +54,28 @@ bottom-up perspective. When fault impacts virtualized resources, FM should
 tracking down the associtated physical resources so that new resources could be
 employed to mitgate faults and vice versa. This requires precise mappings
 between layers since there could be one-to-many (aggregation) or many-to-one
-(sharing) relationships between virtualized and physical resources. 
+(sharing) relationships between virtualized and physical resources as shown in
+Fig.\ref{fig:mapping}.  
  
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.52]{fig/mapping.pdf}
+	\caption{Mapping of virtual and phyiscal resources}
+	\label{fig:mapping}
+\end{figure}
+
+On the physical layer, FM approaches such as heartbeats and fencing are usually
+applied to ensure the high availability of clusters and on the virtualization
+layer, monitoring mechanism frequently focuses on the health of virtual
+resources, there is hardly any communication between separate approaches.
+Configuration as such can seriously introduce inconsistency not only during the
+FM operation, but also during daily operations, since each layer makes decisions
+based on its own observations of current states.  
+
 \subsubsection{NFVI and NFV Layers}
+
+Same consistency problem could impact the NFVI and NFV layers, where NFVIs are
+virtualized teleco services elements and 
 
 \subsubsection{FM by Orchestration of NFV Services}
 
