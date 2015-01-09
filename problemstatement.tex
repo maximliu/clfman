@@ -24,7 +24,7 @@ The central challenge in the cross-layer fault management lays in the coordinati
 of various FM appraoches from different layers involved in the NFV architecture
 and, frequently, also within individual layers. We classify those problem in
 \emph{vertical} and \emph{horizontal} dimensions. In this section, we analyze
-research challenges in details accrodingly to the above mentioned dimensions,
+research problems in details accrodingly to the above mentioned dimensions,
 then we provide a scenario that clarify an uncoordinated FM will aggreviate the
 holistic system when failures impact. 
 
@@ -48,11 +48,11 @@ different forms of resource virtualization, e.g. server, network, application
 etc., different approaches have been applied to manage the virtual instances
 which mostly concentrate on the efficient control of physical resources.
 Features such as tracking of dependencies between virtual resources and their
-physical mappings from service point of view is still missing piece.  Such kind
+physical mappings from the service point of view is still missing piece. Such kind
 of dependency tracking is essential for the reliability both from top-down and
 bottom-up perspective. When fault impacts virtualized resources, FM should
-tracking down the associtated physical resources so that new resources could be
-employed to mitgate faults and vice versa. This requires precise mappings
+tracking down the associated physical resources so that new resources could be
+employed to mitigate faults and vice versa. This requires precise mappings
 between layers since there could be one-to-many (aggregation) or many-to-one
 (sharing) relationships between virtualized and physical resources as shown in
 Fig.\ref{fig:mapping}.  
@@ -60,24 +60,38 @@ Fig.\ref{fig:mapping}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.52]{fig/mapping.pdf}
-	\caption{Mapping of virtual and phyiscal resources}
+	\caption{Mapping of virtual and physical resources}
 	\label{fig:mapping}
 \end{figure}
 
-On the physical layer, FM approaches such as heartbeats and fencing are usually
-applied to ensure the high availability of clusters and on the virtualization
-layer, monitoring mechanism frequently focuses on the health of virtual
-resources, there is hardly any communication between separate approaches.
-Configuration as such can seriously introduce inconsistency not only during the
-FM operation, but also during daily operations, since each layer makes decisions
-based on its own observations of current states.  
-
+As suggested in the Table~\ref{tbl:layers}, on the physical layer, FM approaches
+such as heartbeats and fencing are usually applied to ensure the high
+availability of clusters. On the virtualization layer, monitoring mechanisms
+frequently focus on the health of virtual resources, there is hardly any
+communication between separate approaches. Configuration as such can introduce
+inconsistency not only during the FM operations, since each layer makes
+decisions based on its own observations of current states of its own, e.g.  in a
+one-to-many configuration, heartbeat mechanism managing HA of physical clusters
+decides to apply Totem single-ring ordering and membership
+protocol~\cite{amir1995totem} (e.g. Corosync) to shutdown and replace a node
+which does not respond to heartbeat, however in the same moment, management of
+virtual resources also detects the service degradation, but decides to migrate
+the complete virtual element onto other set of working nodes in their resource
+pool. This scenario leads to extra overhead for he unnecessary operations due to
+lack of communication between layers and thus inconsistency in the fault
+management actions derived.
+ 
 \subsubsection{NFVI and NFV Layers}
 
-Same consistency problem could impact the NFVI and NFV layers, where NFVIs are
-virtualized teleco services elements and 
+Same mapping and consistency problems could affect NFVI and NFV layers as well,
+where NFVIs are virtualized teleco services elements and NFV is teleco services
+chained together by an orchestration function using service elements. Virtualized
+infrastructure is provisioned based on virtual resources prepared by hypervisors
+and other different means of virtualization, e.g. storage and network
+virtualization techniques. On NFVI layer, virtual resources are combined with
+specific functionalities such as vRouters, vEPC, vFirewall etc. as shown on the
+top layer in Fig.~\ref{fig:arch}. An orchestration functions   
 
-\subsubsection{FM by Orchestration of NFV Services}
 
 \subsection{Problems of Horizontal Integration of FM Approaches}
 
